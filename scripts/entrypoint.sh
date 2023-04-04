@@ -7,7 +7,8 @@ fi
 sudo pacman -Sy
 export MAKEFLAGS=-j$(nproc)
 namcap PKGBUILD
-makepkg -fC --syncdeps --noconfirm
+# makepkg -fC --syncdeps --noconfirm
+makepkg -si --noconfirm
 
 echo "==============="
 echo "Package created:"
