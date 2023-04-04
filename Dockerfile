@@ -1,5 +1,7 @@
 FROM archlinux:base
 
+RUN sed -i "/\[multilib\]/,/Include/"'s/^#//' /etc/pacman.conf
+
 RUN pacman -Syu --needed --noconfirm \
     binutils \
     fakeroot \
@@ -8,8 +10,6 @@ RUN pacman -Syu --needed --noconfirm \
     sudo \
     lib32-libglvnd \
     lib32-libx11
-
-RUN sed -i "/\[multilib\]/,/Include/"'s/^#//' /etc/pacman.conf
 
 RUN useradd -d /build -m build
 RUN echo "build ALL=(ALL) NOPASSWD: ALL" >> /etc/sudoers
