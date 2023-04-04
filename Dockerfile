@@ -7,6 +7,8 @@ RUN pacman -Syu --needed --noconfirm \
     namcap \
     sudo
 
+RUN sed -i "/\[multilib\]/,/Include/"'s/^#//' /etc/pacman.conf
+
 RUN useradd -d /build -m build
 RUN echo "build ALL=(ALL) NOPASSWD: ALL" >> /etc/sudoers
 
