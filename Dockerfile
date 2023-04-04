@@ -5,7 +5,9 @@ RUN pacman -Syu --needed --noconfirm \
     fakeroot \
     grep \
     namcap \
-    sudo
+    sudo \
+    lib32-libglvnd \
+    lib32-libx11
 
 RUN sed -i "/\[multilib\]/,/Include/"'s/^#//' /etc/pacman.conf
 
