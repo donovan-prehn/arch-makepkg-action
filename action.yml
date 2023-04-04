@@ -5,5 +5,5 @@ branding:
   icon: package
   color: blue
 runs:
-  using: docker
-  image: docker://mijailr/makepkg:1.0.1
+  using: 'docker'
+  image: 'Dockerfile'
